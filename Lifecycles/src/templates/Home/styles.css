@@ -11,3 +11,19 @@
   display: flex;
   align-items: flex-end;
 }
+
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  color: #888;
+}
+
+.search-container{
+  margin-bottom: 30px;
+}
+
+.search-definition{
+  margin-top: 15px;
+}
