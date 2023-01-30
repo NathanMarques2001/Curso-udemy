@@ -1,0 +1,3 @@
+Gerar coverage ->
+npm test -- --watchAll="false" --coverage
+
