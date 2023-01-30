@@ -7,20 +7,17 @@ describe('<TextInput />', () => {
     const fn = jest.fn();
     render(<TextInput handleChange={fn} searchValue="teste" />);
 
-    const input = screen.getByPlaceholderText(/digite aqui.../i);
-    expect(input.value).toBe('teste');
+    expect(screen.getByPlaceholderText(/digite aqui.../i).value).toBe('teste');
   });
 
   it('should call hancleChange function on each key pressed', () => {
     const fn = jest.fn();
     render(<TextInput handleChange={fn} searchValue="o valor" />);
 
-    const input = screen.getByPlaceholderText(/digite aqui.../i);
-    const value = 'o valor';
-    userEvent.type(input, value);
+    userEvent.type(screen.getByPlaceholderText(/digite aqui.../i), 'o valor');
 
-    expect(input.value).toBe(value);
-    expect(fn).toHaveBeenCalledTimes(value.length);
+    expect(screen.getByPlaceholderText(/digite aqui.../i).value).toBe('o valor');
+    expect(fn).toHaveBeenCalledTimes('o valor'.length);
   });
 
   it('should match snapshot', () => {
